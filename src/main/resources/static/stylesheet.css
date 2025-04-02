@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+h1{
+    display: flex;
+    align-items: flex-start;
+    margin: 10px;
+}
+.header {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 2px solid black;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    padding: 10px 20px;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.sidebar {
+    text-align: left;
+    padding: 20px;
+}
+
+.highlight {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    background-color: yellow;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+.buttons {
+    display: flex;
+    gap: 15px;
+    float: left;
+}
+.buttons button {
+    padding: 5px 10px;
+    border: 2px solid black;
+    background: white;
+}
+
+.selected{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.content {
+    text-align: left;
+    max-width: 600px;
+}
+.content h2 {
+    font-size: 24px;
+}
+.content p {
+    font-size: 16px;
+}
+
+.elephant {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 150px;
+}
+.cta-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+}
+.eventContainer{
+    padding: 2px 100px;
+}

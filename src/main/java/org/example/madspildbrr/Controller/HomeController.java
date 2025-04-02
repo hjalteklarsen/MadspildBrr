@@ -9,6 +9,23 @@ public class HomeController {
     @GetMapping("/")
     public String index()
     {
-        return "home/index";
+        return "home/event";
     }
+
+    @GetMapping("/erhverv")
+    public String erhverv(){
+        return "home/erhverv";
+    }
+
+    @GetMapping("/privat")
+    public String privat(){
+        return "home/privat";
+    }
+
+    @GetMapping("/about")
+    public String about(){
+        return "home/about";
+    }
+
+
 }
