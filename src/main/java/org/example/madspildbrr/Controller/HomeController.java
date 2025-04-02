@@ -11,10 +11,4 @@ public class HomeController {
     {
         return "home/index";
     }
-    //kommentar
-    //kommentar
-
-    //Hej
-
-    //hej hej
 }
