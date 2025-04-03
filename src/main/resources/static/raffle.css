@@ -1,2 +1,28 @@
+.nav a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
 
+.nav a:hover {
+    color: #b89c5d;
+}
+
+
+.buttons a:hover {
+    color: black;
+}
+
+.footer {
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 2px solid #ccc;
+}
+
+.page-wrapper {
+    flex: 1;
+}
 

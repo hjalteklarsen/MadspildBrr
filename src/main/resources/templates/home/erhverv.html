@@ -13,21 +13,33 @@
 
     <div class="sidebar">
         <div class="buttons">
-            <span class="selected">Erhverv</span> |
-            <a href="/privat">
-            <span>Privat</span>
-            </a>
+            <a href="/erhverv">
+                <span>Erhverv</span>
+            </a>|
+            <span class="selected">Privat</span>
         </div>
     </div>
 
     <div class="nav-links">
-        <span>LOG IN</span> |
-        <span>TIPS</span>   |
-        <span>EVENTS</span>
-        <span>RAFFLE</span> |
-        <span>KONTAKT</span> |
-        <span>ABOUT</span>
+        <a href="/login"><span>LOG IN</span></a> |
+        <a href="/tips"><span>TIPS</span></a> |
+        <a href="/raffle"><span>RAFFLE</span></a> |
+        <a href="/kontakt"><span>KONTAKT</span></a> |
+        <a href="/om"><span>ABOUT</span></a>
     </div>
 </div>
+
+<div id="footer-placeholder">
+
+
+<script>
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+</script>
+
+
+</div>
+
 </body>
 </html>

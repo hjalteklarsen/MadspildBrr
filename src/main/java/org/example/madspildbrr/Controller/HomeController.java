@@ -22,9 +22,19 @@ public class HomeController {
         return "home/privat";
     }
 
-    @GetMapping("/about")
-    public String about(){
-        return "home/about";
+    @GetMapping("/om")
+    public String om(){
+        return "home/om";
+    }
+
+    @GetMapping("/raffle")
+    public String raffle(){
+        return "home/raffle";
+    }
+
+    @GetMapping("/kontakt")
+    public String kontakt(){
+        return "home/kontakt";
     }
 
 

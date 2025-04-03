@@ -8,6 +8,12 @@
     color: #b89c5d;
 }
 
+
+.buttons a:hover {
+    color: black;
+}
+
+
 .buttons a {
     color: grey;
     transition: color 0.3s ease-in-out;
@@ -16,10 +22,6 @@
 .buttons .selected {
     color: black;
     font-weight: bold;
-}
-
-.buttons a:hover {
-    color: black;
 }
 
 .middle {
@@ -82,4 +84,15 @@ button:hover {
     text-decoration: HighlightText;
     -webkit-text-stroke: 1px slategrey;
     -webkit-text-stroke-width: thin;
+}
+.footer {
+     background-color: #e0e0e0;
+     color: #333;
+     padding: 20px;
+     text-align: center;
+     font-size: 14px;
+     border-top: 2px solid #ccc;
+ }
+.page-wrapper {
+    flex: 1;
 }

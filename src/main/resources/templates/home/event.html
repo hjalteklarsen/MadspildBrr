@@ -18,14 +18,16 @@
             </div>
         </div>
         <div class="nav-links">
-            <span>LOG IN</span> |
-            <span>TIPS</span> |
-            <span class="selected">EVENT</span> |
-            <span>RAFFLE</span> |
-            <span>KONTAKT</span> |
-            <span>ABOUT</span>
+            <a href="/login"><span>LOG IN</span></a> |
+            <a href="/tips"><span>TIPS</span></a> |
+            <a href="/raffle"><span>RAFFLE</span></a> |
+            <a href="/kontakt"><span>KONTAKT</span></a> |
+            <a href="/om"><span>ABOUT</span></a> |
+         <span class="selected">EVENT</span>
         </div>
     </div>
+
+
     <div class="about-wrapper">
         <h2>FÅ STYR PÅ JERES MADSPILD</h2>
         <div class="about-container">
@@ -63,9 +65,15 @@
     </div>
 </div>
 
-<footer class="footer">
-    <p>&copy; 2025 Danmark mod Madspild. Alle rettigheder forbeholdes.</p>
-</footer>
+<div id="footer-placeholder">
+
+
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+    </script>
+
 
 <script>
     document.querySelector(".modal form").addEventListener("submit", function (e) {
