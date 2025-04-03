@@ -11,23 +11,26 @@
 <h1>
     DANMARK MOD MADSPILD
 </h1>
-<div class="nav">
+    <div id="navbar-placeholder">
+        <script>
+            fetch("navbarprivat.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("navbar-placeholder").innerHTML = data;
 
-    <div class="sidebar">
-        <div class="buttons">
-            <a href="/erhverv">
-        <span>Erhverv</span>
-            </a>|
-        <span class="selected">Privat</span>
-        </div>
-    </div>
+                    let currentPage = window.location.pathname.split("/").pop();
+                    let links = document.querySelectorAll(".nav-link")
 
-    <div class="nav-links">
-        <a href="/login"><span>LOG IN</span></a> |
-        <a href="/tips"><span>TIPS</span></a> |
-        <a href="/raffle"><span>RAFFLE</span></a> |
-        <a href="/kontakt"><span>KONTAKT</span></a> |
-        <a href="/om"><span>ABOUT</span></a>
+                    links.forEach(link =>{
+                        if(link.getAttribute("href") === currentPage){
+                            link.classList.add("active")
+                        }
+                    });
+                });
+
+        </script>
+
+
     </div>
 
 
