@@ -27,5 +27,10 @@ public class HomeController {
         return "home/om";
     }
 
+    @GetMapping("/kontakt")
+    public String kontakt(){
+        return "home/kontakt";
+    }
+
 
 }
