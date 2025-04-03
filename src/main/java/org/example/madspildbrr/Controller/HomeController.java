@@ -3,15 +3,13 @@ package org.example.madspildbrr.Controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
     @GetMapping("/")
     public String index()
     {
-        return "home/raffle";
+        return "home/event";
     }
 
     @GetMapping("/erhverv")
@@ -25,8 +23,13 @@ public class HomeController {
     }
 
     @GetMapping("/om")
-    public String about(){
+    public String om(){
         return "home/om";
+    }
+
+    @GetMapping("/raffle")
+    public String raffle(){
+        return "home/raffle";
     }
 
     @GetMapping("/kontakt")
@@ -34,13 +37,5 @@ public class HomeController {
         return "home/kontakt";
     }
 
-    /*@PostMapping("/submit")
-    @ResponseBody
-    public String handleFormSubmission(@RequestParam String name,
-                                       @RequestParam String email,
-                                       @RequestParam int participants) {
-        emailService.sendConfirmation(email, name, participants);
-        return "OK";
-    }*/
 
 }

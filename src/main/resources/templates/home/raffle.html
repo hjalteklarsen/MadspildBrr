@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="/modal-raffle.css">
 </head>
 <body>
+<div class="page-wrapper">
+
 <h1>
   DANMARK MOD MADSPILD
 </h1>
@@ -23,11 +25,11 @@
   </div>
 
   <div class="nav-links">
-    <span>LOG IN</span> |
-    <span>TIPS</span> |
-    <span>RAFFLE</span> |
-    <span>KONTAKT</span> |
-    <span>ABOUT</span>
+    <a href="/login"><span>LOG IN</span></a> |
+    <a href="/tips"><span>TIPS</span></a> |
+    <a href="/raffle"><span>RAFFLE</span></a> |
+    <a href="/kontakt"><span>KONTAKT</span></a> |
+    <a href="/om"><span>ABOUT</span></a>
   </div>
 </div>
 
@@ -36,11 +38,7 @@
   <a href="#modal1" class="modal-trigger">
     <div class="thumb">
       <img src="/Raffle-billeder/Burger.jpg" alt="Burger">
-      <div class="overlay">
-        <h3 class="restaurant-name">Burger Palace</h3>
-        <p class="more-info">Juicy local beef, baked brioche buns.</p>
-        <p class="deltag">JOIN RAFFLE</p>
-      </div>
+      <div class="hover-text">Burger</div>
     </div>
   </a>
   <a href="#modal2" class="modal-trigger">
@@ -75,12 +73,10 @@
   </a>
 </div>
 
+<!-- Modals -->
 <div id="modal1" class="modal">
   <a href="#" class="modal-close">&times;</a>
   <div class="modal-container">
-    <div class="text-overlay">
-      Burger burger text
-    </div>
     <div class="modal-img-wrapper">
       <img src="/Raffle-billeder/Burger.jpg" class="modal-img" alt="Image 1">
     </div>
@@ -101,7 +97,7 @@
 <div id="modal3" class="modal">
   <a href="#" class="modal-close">&times;</a>
   <div class="modal-container">
-    <img src="/Raffle-billeder/Risotto.jpg" class="modal-img" alt="Image 3">
+    <img src="image3.jpg" class="modal-img" alt="Image 3">
     <p class="text-overlay">Description for Image 3</p>
   </div>
 </div>
@@ -109,7 +105,7 @@
 <div id="modal4" class="modal">
   <a href="#" class="modal-close">&times;</a>
   <div class="modal-container">
-    <img src="/Raffle-billeder/Gyros.jpg" class="modal-img" alt="Image 4">
+    <img src="image4.jpg" class="modal-img" alt="Image 4">
     <p class="text-overlay">Description for Image 4</p>
   </div>
 </div>
@@ -117,7 +113,7 @@
 <div id="modal5" class="modal">
   <a href="#" class="modal-close">&times;</a>
   <div class="modal-container">
-    <img src="/Raffle-billeder/Pandekager.jpg" class="modal-img" alt="Image 5">
+    <img src="image5.jpg" class="modal-img" alt="Image 5">
     <p class="text-overlay">Description for Image 5</p>
   </div>
 </div>
@@ -125,14 +121,14 @@
 <div id="modal6" class="modal">
   <a href="#" class="modal-close">&times;</a>
   <div class="modal-container">
-    <img src="/Raffle-billeder/Curry.jpg" class="modal-img" alt="Image 6">
+    <img src="image6.jpg" class="modal-img" alt="Image 6">
     <p class="text-overlay">Description for Image 6</p>
   </div>
 </div>
 
+</div>
 <footer class="footer">
   <p>&copy; 2025 Danmark mod Madspild. Alle rettigheder forbeholdes.</p>
 </footer>
-
 </body>
 </html>

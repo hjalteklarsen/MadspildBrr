@@ -43,3 +43,17 @@ button {
 button:hover {
     background: #45a049;
 }
+.nav a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav a:hover {
+    color: #b89c5d;
+}
+
+.buttons a {
+    color: grey;
+    transition: color 0.3s ease-in-out;
+}
