@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Hahmlet', sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -14,6 +16,7 @@ h1{
     font-size: 20px;
     font-weight: bold;
 }
+
 .nav {
     display: flex;
     justify-content: space-between;
