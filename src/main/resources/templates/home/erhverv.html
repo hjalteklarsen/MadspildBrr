@@ -9,25 +9,17 @@
 <h1>
     DANMARK MOD MADSPILD
 </h1>
-<div class="nav">
+<div id="navbar-placeholder">
+    <script>
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("navbar-placeholder").innerHTML = data);
+    </script>
 
-    <div class="sidebar">
-        <div class="buttons">
-            <a href="/erhverv">
-                <span>Erhverv</span>
-            </a>|
-            <span class="selected">Privat</span>
-        </div>
-    </div>
 
-    <div class="nav-links">
-        <a href="/login"><span>LOG IN</span></a> |
-        <a href="/tips"><span>TIPS</span></a> |
-        <a href="/raffle"><span>RAFFLE</span></a> |
-        <a href="/kontakt"><span>KONTAKT</span></a> |
-        <a href="/om"><span>ABOUT</span></a>
-    </div>
 </div>
+
+
 
 <div id="footer-placeholder">
 
