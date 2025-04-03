@@ -18,3 +18,19 @@
     color: grey;
     transition: color 0.3s ease-in-out;
 }
+
+.nav-links {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a :hover {
+    color: #b89c5d; /* Gylden farve ved hover */
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: #a88b4d; /* Gør aktivt link anderledes */
+}
+
