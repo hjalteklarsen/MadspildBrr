@@ -5,6 +5,7 @@
     <title>Event</title>
     <link rel="stylesheet" href="/stylesheet.css">
     <link rel="stylesheet" href="/event.css">
+    <link rel="stylesheet" href="/modal.css">
 </head>
 <body>
 <div class="page-wrapper"> <!-- NEW WRAPPER -->
@@ -12,8 +13,8 @@
     <div class="nav">
         <div class="sidebar">
             <div class="buttons">
-                <span class="selected">Erhverv</span> |
-                <span>Privat</span>
+                <span class="selected">ERHVERV</span> |
+                <span>PRIVAT</span>
             </div>
         </div>
         <div class="nav-links">
@@ -37,9 +38,27 @@
                 <p>Afholdt af førende eksperter fra den danske restaurationsbranche</p>
                 <p><strong>Priser fra 1295,- inkl. moms pr. person</strong></p>
                 <p>Min. 12 personer.</p>
-                <button class="cta-button">DELTAG</button>
+                <a href="#modal" class="cta-button">DELTAG</a>
             </div>
             <img src="/happy-people-cooking.jpg" alt="madspild firma event">
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <a href="#" class="modal-close">&times;</a>
+        <div class="modal-container">
+            <h3>Tilmeld dig eventet</h3>
+            <form action="/submit" method="POST">
+                <label for="name">Navn:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="participants">Antal deltagere:</label><br>
+                <input type="number" id="participants" name="participants" min="1" required><br><br>
+
+                <button type="submit">Send</button>
+            </form>
         </div>
     </div>
 </div>
@@ -47,5 +66,21 @@
 <footer class="footer">
     <p>&copy; 2025 Danmark mod Madspild. Alle rettigheder forbeholdes.</p>
 </footer>
+
+<script>
+    document.querySelector(".modal form").addEventListener("submit", function (e) {
+        e.preventDefault(); // prevent actual form submission
+
+        const modalContainer = document.querySelector(".modal-container");
+
+        // Replace form content with thank-you message
+        modalContainer.innerHTML = "<p style='text-align: center; font-weight: bold;'>Tak for tilmeldingen!<br>Bekræftelse sendt på e-mail.</p>";
+
+        // Wait 2 seconds and then close the modal
+        setTimeout(() => {
+            window.location.hash = ""; // This removes #modal from URL
+        }, 2000);
+    });
+</script>
 </body>
 </html>
