@@ -22,9 +22,9 @@ public class HomeController {
         return "home/privat";
     }
 
-    @GetMapping("/about")
+    @GetMapping("/om")
     public String about(){
-        return "/about";
+        return "home/om";
     }
 
 
