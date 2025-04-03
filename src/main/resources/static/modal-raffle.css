@@ -11,12 +11,12 @@
 
 .modal {
     position: fixed;
-    display: none;
-    background-color: rgba(0, 0, 0, 0.8);
     top: 0;
     left: 0;
-    width: 500px;
-    height: 500px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -29,13 +29,20 @@
 .modal-container {
     position: fixed;
     background: #fff;
-    width: 70%;
-    max-width: 400px;
+    width: 500px;
+    height: 500px;
+    aspect-ratio: 1 / 1;
     left: 50%;
     top: 50%;
-    padding: 20px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     transform: translate(-50%, -50%);
-    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 12px;
 }
 
 .modal:target .modal-container {
@@ -52,14 +59,17 @@
     font-weight: bold;
 }
 
+.modal-img-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 .modal-img {
     width: 100%;
-    height: auto;
-    max-width: 600px;
-    max-height: 600px;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    margin: auto;
-    object-fit: contain;
 }
 
 .modal .text-overlay {
@@ -74,4 +84,25 @@
     transition: opacity 0.3s ease-in-out;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.thumb {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
