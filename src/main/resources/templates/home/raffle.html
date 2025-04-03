@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Raffle</title>
+  <link rel="stylesheet" href="/stylesheet.css">
+  <link rel="stylesheet" href="/raffle.css">
+</head>
+<body>
+<h1>
+  DANMARK MOD MADSPILD
+</h1>
+<div class="nav">
+
+  <div class="sidebar">
+    <div class="buttons">
+      <a href="/erhverv">
+        <span>Erhverv</span>
+      </a>|
+      <span class="selected">Privat</span>
+    </div>
+  </div>
+
+  <div class="nav-links">
+    <span>LOG IN</span> |
+    <span>TIPS</span> |
+    <span>RAFFLE</span> |
+    <span>KONTAKT</span> |
+    <span>ABOUT</span>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Available Raffles</h2>
+  <div id="raffles-list">
+    <div class="raffle-card">
+      <div>
+        <h3>Joe's Pizza</h3>
+        <p>Discounted Margherita Pizza - $5</p>
+        <small>Time left: 2 hours</small>
+      </div>
+      <button onclick="enterRaffle('Joe\'s Pizza - Margherita')">Enter</button>
+    </div>
+    <div class="raffle-card">
+      <div>
+        <h3>Sushi Haven</h3>
+        <p>50% off Sushi Platter</p>
+        <small>Time left: 3 hours</small>
+      </div>
+      <button onclick="enterRaffle('Sushi Haven - Sushi Platter')">Enter</button>
+    </div>
+  </div>
+
+  <h2>Entered Raffles</h2>
+  <div id="entered-raffles">
+    <p>No raffles entered yet.</p>
+  </div>
+</div>
+
+<script>
+  function enterRaffle(raffleName) {
+    let enteredRaffles = document.getElementById('entered-raffles');
+    let newEntry = document.createElement('p');
+    newEntry.textContent = raffleName;
+    enteredRaffles.appendChild(newEntry);
+  }
+</script>
+</body>
+</html>
