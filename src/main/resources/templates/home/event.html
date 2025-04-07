@@ -14,17 +14,30 @@
 
     <div id="navbar-placeholder">
         <script>
-            fetch("/navbarprivat.html")
+            const userType = localStorage.getItem("userType");
+
+            if (userType === "erhverv") {
+                navbarFile = "navbarerhverv.html";
+            } else if (userType === "restaurant") {
+                navbarFile = "navbarrestaurant.html";
+            }
+            else if(userType === "privat") {
+                navbarFile = "navbarprivat.html"
+            }
+            else if(userType === null) {
+                navbarFile = "navbarstandard.html";
+            }
+
+            fetch(navbarFile)
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById("navbar-placeholder").innerHTML = data;
 
                     let currentPage = window.location.pathname.split("/").pop();
-                    let links = document.querySelectorAll(".nav-link")
-
-                    links.forEach(link =>{
-                        if(link.getAttribute("href") === currentPage){
-                            link.classList.add("active")
+                    let links = document.querySelectorAll(".nav-link");
+                    links.forEach(link => {
+                        if (link.getAttribute("href") === currentPage) {
+                            link.classList.add("active");
                         }
                     });
                 });

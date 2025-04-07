@@ -13,13 +13,17 @@
   </div>
   <div class="nav-links">
     | <a href="/"><span>HOME</span></a>
-    | <a href="/login"><span>LOG UD</span></a> |
+    | <a href="/login" id="logout-link"><span>LOG UD</span></a> |
     <a href="/event"><span>EVENTS</span></a> |
     <a href="/tips"><span>TIPS</span></a> |
     <a href="/kontakt"><span>KONTAKT</span></a> |
     <a href="/om"><span>OM OS</span></a> |
   </div>
 </div>
-
+<script>
+  document.getElementById("logout-link").addEventListener("click", function() {
+    localStorage.removeItem("userType");
+  });
+</script>
 </body>
 </html>

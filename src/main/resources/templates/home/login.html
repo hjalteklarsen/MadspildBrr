@@ -62,17 +62,20 @@
 <script>
     document.querySelector("form").addEventListener("submit", function(event) {
         event.preventDefault();
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
+        const username = document.getElementById("username").value.trim().toLowerCase();
+        const password = document.getElementById("password").value.trim().toLowerCase();
 
         if (username === "erhverv" && password === "erhverv") {
+            localStorage.setItem("userType", "erhverv");
             window.location.href = "/event";
         } else if (username === "privat" && password === "privat") {
-            window.location.href = "/raffle"
-        } else if (username === "restaurant" && password === "restaurant"){
-            window.location.href = "/restaurant"
-        } else{
-            alert("forkert username eller adgangskode")
+            localStorage.setItem("userType", "privat");
+            window.location.href = "/raffle";
+        } else if (username === "restaurant" && password === "restaurant") {
+            localStorage.setItem("userType", "restaurant");
+            window.location.href = "/event";
+        } else {
+            alert("Forkert brugernavn eller adgangskode");
         }
     });
 </script>
