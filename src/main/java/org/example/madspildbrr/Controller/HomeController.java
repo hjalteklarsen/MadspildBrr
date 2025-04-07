@@ -40,4 +40,9 @@ public class HomeController {
     public String opret(){
         return "home/opret";
     }
+
+    @GetMapping("/tips")
+    public String tips(){
+        return "home/tips";
+    }
 }
