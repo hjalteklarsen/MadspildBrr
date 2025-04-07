@@ -11,19 +11,9 @@ public class HomeController {
         return "home/index";
     }
 
-    @GetMapping("/erhverv")
-    public String erhverv(){
-        return "home/erhverv";
-    }
-
     @GetMapping("/event")
     public String event(){
-        return "home/erhverv/event";
-    }
-
-    @GetMapping("/privat")
-    public String privat(){
-        return "home/privat";
+        return "home/event";
     }
 
     @GetMapping("/om")
@@ -33,7 +23,7 @@ public class HomeController {
 
     @GetMapping("/raffle")
     public String raffle(){
-        return "home/privat/raffle";
+        return "home/raffle";
     }
 
     @GetMapping("/kontakt")

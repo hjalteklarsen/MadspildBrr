@@ -2,15 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DMM</title>
+    <title>Landing-page</title>
     <link rel="stylesheet" href="/css/stylesheet.css">
-    <link rel="index" href="/css/index.css">
+    <link rel="stylesheet" href="/css/Tivstylesheet.css">
 </head>
 <body>
-<h1>Danmark Mod Madspild</h1>
-<div class="images-container">
-    <img src="/billeder/happy-people-cooking.jpg" alt="madspild">
-    <img src="/billeder/happy-people-cooking.jpg" alt="madspild">
+<div class="page-wrapper">
+<h1>
+    DANMARK MOD MADSPILD
+</h1>
+    <div id="navbar-placeholder">
+        <script>
+            fetch("/navbarprivat.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("navbar-placeholder").innerHTML = data;
+
+                    let currentPage = window.location.pathname.split("/").pop();
+                    let links = document.querySelectorAll(".nav-link")
+
+                    links.forEach(link =>{
+                        if(link.getAttribute("href") === currentPage){
+                            link.classList.add("active")
+                        }
+                    });
+                });
+
+        </script>
+
+
+    </div>
+
+
+<div class="c1">
+    <img id="1" src="/billeder/mad.webp" alt="madspild">
+<div class="middle"><h1 class="h11">STOP MADSPILD - START DMM</h1></div>
+    <div class="undermiddle">
+        <button>LÆS MERE</button>
+    </div>
+
 </div>
+
+
+</div>
+
+<main id="main">
+    <section class="contentMad">
+        <div class="text">
+            <h4>Mad for alle og enhver</h4>
+            <h2>Vi sørger for maden - i spiser den</h2>
+            <p>Stop med at bruge så lang tid i køkkenet</p>
+            <button>SE ALLE TIPS</button>
+            <button>SE ALLE MADSTEDER</button>
+        </div>
+        <div class="imgtilmad">
+            <img src ="/billeder/hugge.webp" alt="mad">
+
+        </div>
+
+
+    </section>
+
+</main>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 Danmark mod Madspild. Alle rettigheder forbeholdes.</p>
+</footer>
+
 </body>
 </html>
