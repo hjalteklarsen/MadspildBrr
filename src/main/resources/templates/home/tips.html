@@ -1,10 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Tips mod madspild</title>
+  <link rel="stylesheet" href="/css/stylesheet.css">
+  <link rel="stylesheet" href="/css/tips.css"> <!-- NY CSS FIL -->
 </head>
 <body>
+<div class="page-wrapper">
+  <h1>DANMARK MOD MADSPILD</h1>
 
+  <div id="navbar-placeholder">
+    <script>
+      fetch("/navbarprivat.html")
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+
+                let currentPage = window.location.pathname.split("/").pop();
+                let links = document.querySelectorAll(".nav-link")
+                links.forEach(link => {
+                  if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active")
+                  }
+                });
+              });
+    </script>
+  </div>
+
+  <div class="tips-wrapper">
+    <h2>Tips til at undgå madspild</h2>
+
+    <div class="tips-grid">
+      <article class="tip-card">
+        <img src="/billeder/leftovers.webp" alt="Brug rester">
+        <h3>Brug dine rester kreativt</h3>
+        <p>Lav f.eks. en wrap, omelet eller suppe ud af dine rester – det sparer både penge og mad.</p>
+        <a class="cta-button">Læs mere</a>
+      </article>
+
+      <article class="tip-card">
+        <img src="/billeder/meal-plan.jpeg" alt="Madplan">
+        <h3>Lav en madplan</h3>
+        <p>Planlæg dine måltider for hele ugen og køb kun det du har brug for – så smider du mindre ud.</p>
+        <a class="cta-button">Læs mere</a>
+      </article>
+
+      <article class="tip-card">
+        <img src="/billeder/freeze-food.jpg" alt="Frys mad ned">
+        <h3>Frys mad ned i tide</h3>
+        <p>Hvis du ikke får brugt maden i tide – frys det ned. Det gælder både brød, grønt og rester.</p>
+        <a class="cta-button">Læs mere</a>
+      </article>
+
+    </div>
+  </div>
+
+  <div id="footer-placeholder">
+    <script>
+      fetch("footer.html")
+              .then(response => response.text())
+              .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+    </script>
+  </div>
+</div>
 </body>
 </html>
