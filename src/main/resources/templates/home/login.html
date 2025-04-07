@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/test.css">
 </head>
+
 <body>
+
+
 <h1>DANMARK MOD MADSPILD</h1>
 <div id="navbar-placeholder">
     <script>
@@ -55,6 +58,24 @@
         .then(data => document.getElementById("footer-placeholder").innerHTML = data);
 </script>
 </div>
+
+<script>
+    document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (username === "erhverv" && password === "erhverv") {
+            window.location.href = "/event";
+        } else if (username === "privat" && password === "privat") {
+            window.location.href = "/raffle"
+        } else if (username === "restaurant" && password === "restaurant"){
+            window.location.href = "/restaurant"
+        } else{
+            alert("forkert username eller adgangskode")
+        }
+    });
+</script>
 
 </body>
 </html>
