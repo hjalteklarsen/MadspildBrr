@@ -41,5 +41,13 @@ public class HomeController {
         return "home/kontakt";
     }
 
+    @GetMapping("/login")
+    public String login(){
+        return "home/login";
+    }
 
+    @GetMapping("/opret")
+    public String opret(){
+        return "home/opret";
+    }
 }

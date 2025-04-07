@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opret</title>
+    <link rel="stylesheet" href="/stylesheet.css">
+    <link rel="stylesheet" href="/login.css">
+    <style>
+        .password-error {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="navbar-placeholder">
+    <script>
+        fetch("navbarprivat.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+
+                let currentPage = window.location.pathname.split("/").pop();
+                let links = document.querySelectorAll(".nav-link");
+                links.forEach(link => {
+                    if (link.getAttribute("href") === currentPage) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+    </script>
+</div>
+
+<div class="login-container">
+    <h2>Opret Bruger</h2>
+
+    <div class="user-type-choice">
+        <label><input type="radio" name="userType" value="privat" onchange="toggleUserTypeForm()"> Privat</label>
+        <label><input type="radio" name="userType" value="erhverv" onchange="toggleUserTypeForm()"> Erhverv</label>
+    </div>
+
+    <!-- Privat form -->
+    <form id="privat-form" action="/opret" method="post" style="display: none;">
+        <label for="privat-name">Navn:</label>
+        <input type="text" id="privat-name" name="name" placeholder="Indtast navn" required>
+
+        <label for="privat-address">Adresse:</label>
+        <input type="text" id="privat-address" name="address" placeholder="Indtast adresse" required>
+
+        <label for="privat-email">E-mail:</label>
+        <input type="email" id="privat-email" name="email" placeholder="Indtast e-mail" required>
+
+        <label for="privat-dob">Fødselsdato:</label>
+        <input type="date" id="privat-dob" name="dob" required>
+
+        <label for="privat-password">Adgangskode:</label>
+        <input type="password" id="privat-password" name="password" placeholder="Vælg adgangskode" required>
+
+        <label for="privat-password-repeat">Gentag adgangskode:</label>
+        <input type="password" id="privat-password-repeat" name="repeatPassword" placeholder="Gentag adgangskode" required>
+        <div id="privat-error" class="password-error">Adgangskoderne matcher ikke.</div>
+
+        <button type="submit">Opret privat bruger</button>
+    </form>
+
+    <!-- Erhverv form -->
+    <form id="erhverv-form" action="/opret" method="post" style="display: none;">
+        <label for="cvr">CVR:</label>
+        <input type="text" id="cvr" name="cvr" placeholder="CVR-nummer" required>
+
+        <label for="company">Firmanavn:</label>
+        <input type="text" id="company" name="company" placeholder="Firmanavn" required>
+
+        <label for="erhverv-address">Adresse:</label>
+        <input type="text" id="erhverv-address" name="address" placeholder="Indtast adresse" required>
+
+        <label for="erhverv-email">E-mail:</label>
+        <input type="email" id="erhverv-email" name="email" placeholder="Indtast e-mail" required>
+
+        <label for="erhverv-password">Adgangskode:</label>
+        <input type="password" id="erhverv-password" name="password" placeholder="Vælg adgangskode" required>
+
+        <label for="erhverv-password-repeat">Gentag adgangskode:</label>
+        <input type="password" id="erhverv-password-repeat" name="repeatPassword" placeholder="Gentag adgangskode" required>
+        <div id="erhverv-error" class="password-error">Adgangskoderne matcher ikke.</div>
+
+        <button type="submit">Opret erhvervsbruger</button>
+    </form>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script>
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+
+    function toggleUserTypeForm() {
+        const selected = document.querySelector('input[name="userType"]:checked');
+        const type = selected ? selected.value : null;
+
+        const privatForm = document.getElementById("privat-form");
+        const erhvervForm = document.getElementById("erhverv-form");
+
+        privatForm.style.display = "none";
+        erhvervForm.style.display = "none";
+
+        if (type === "privat") {
+            privatForm.style.display = "block";
+        } else if (type === "erhverv") {
+            erhvervForm.style.display = "block";
+        }
+    }
+
+    function validatePasswords(e, type) {
+        const pass = document.getElementById(`${type}-password`);
+        const repeat = document.getElementById(`${type}-password-repeat`);
+        const error = document.getElementById(`${type}-error`);
+
+        if (pass.value !== repeat.value) {
+            e.preventDefault();
+            error.style.display = "block";
+            return false;
+        } else {
+            error.style.display = "none";
+            return true;
+        }
+    }
+
+    window.onload = () => {
+        document.getElementById("privat-form").addEventListener("submit", function (e) {
+            if (!validatePasswords(e, "privat")) return;
+
+            e.preventDefault();
+            this.innerHTML = "<p style='text-align: center; font-weight: bold;'>Tak for tilmeldingen!<br>Bekræftelse sendt på e-mail.</p>";
+            setTimeout(() => {
+                window.location.href = "/login.html"; // change if needed
+            }, 2000);
+        });
+
+        document.getElementById("erhverv-form").addEventListener("submit", function (e) {
+            if (!validatePasswords(e, "erhverv")) return;
+
+            e.preventDefault();
+            this.innerHTML = "<p style='text-align: center; font-weight: bold;'>Tak for tilmeldingen!<br>Bekræftelse sendt på e-mail.</p>";
+            setTimeout(() => {
+                window.location.href = "/login"; // change if needed
+            }, 2000);
+        });
+    };
+</script>
+</body>
+</html>
