@@ -48,4 +48,7 @@ public class HomeController {
 
     @GetMapping("/create-raffle")
     public String createRaffle(){ return "home/create-raffle"; }
+
+    @GetMapping("/create-event")
+    public String createEvent(){ return "home/create-event"; }
 }

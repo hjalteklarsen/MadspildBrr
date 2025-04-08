@@ -16,7 +16,6 @@
     </style>
 </head>
 <body>
-<h1>DANMARK MOD MADSPILD</h1>
 <div id="navbar-placeholder">
     <script>
         fetch("navbarprivat.html")
@@ -86,6 +85,15 @@
 
         <label for="erhverv-password-repeat">Gentag adgangskode:</label>
         <input type="password" id="erhverv-password-repeat" name="repeatPassword" placeholder="Gentag adgangskode" required>
+
+        <label for="user-category">Virksomhedstype:</label>
+        <select id="user-category" name="category" required>
+            <option value="" disabled selected>Vælg virksomhedstype</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="virksomhed">Virksomhed</option>
+            <option value="organisation">Organisation</option>
+        </select>
+
         <div id="erhverv-error" class="password-error">Adgangskoderne matcher ikke.</div>
 
         <button type="submit">Opret erhvervsbruger</button>
