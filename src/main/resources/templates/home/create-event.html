@@ -38,6 +38,36 @@
   </style>
 </head>
 <body>
+<div id="navbar-placeholder">
+  <script>
+    const userType = localStorage.getItem("userType");
+    let navbarFile;
+
+    if (userType === "erhverv") {
+      navbarFile = "navbarerhverv.html";
+    } else if (userType === "restaurant") {
+      navbarFile = "navbarrestaurant.html";
+    } else if (userType === "privat") {
+      navbarFile = "navbarprivat.html";
+    } else {
+      navbarFile = "navbarstandard.html";
+    }
+
+    fetch(navbarFile)
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById("navbar-placeholder").innerHTML = data;
+
+              let currentPage = window.location.pathname.split("/").pop();
+              let links = document.querySelectorAll(".nav-link");
+              links.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                  link.classList.add("active");
+                }
+              });
+            });
+  </script>
+</div>
 
 <h1 style="text-align: center;">Opret et nyt Event</h1>
 
@@ -132,6 +162,8 @@
     form.reset();
   });
 </script>
-
+<footer class="footer">
+  <p>&copy; 2025 Danmark mod Madspild. Alle rettigheder forbeholdes.</p>
+</footer>
 </body>
 </html>
