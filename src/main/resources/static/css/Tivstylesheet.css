@@ -37,10 +37,6 @@
     transform: translate(-55%,-50%);
 }
 
-body{
-    background-color: mintcream;
-}
-
 #2{
     height: 50%;
     width: 60%;
@@ -78,12 +74,6 @@ button {
 
 button:hover {
     background-color: #a88b4d;
-}
-.h11{
-    color: whitesmoke;
-    text-decoration: HighlightText;
-    -webkit-text-stroke: 1px slategrey;
-    -webkit-text-stroke-width: thin;
 }
 .footer {
      background-color: #e0e0e0;
