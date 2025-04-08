@@ -1,0 +1,62 @@
+body {
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.page-wrapper {
+    max-width: 600px;
+    margin: 60px auto;
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.raffle-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="datetime-local"],
+input[type="file"],
+input[type="number"],
+textarea {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fdfdfd;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    background-color: black;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #333;
+}
