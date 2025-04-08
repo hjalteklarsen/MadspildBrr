@@ -8,6 +8,11 @@
     color: #b89c5d;
 }
 
+.logo{
+    max-width: 100px;
+    height: 100px;
+}
+
 
 .buttons a:hover {
     color: black;
