@@ -8,7 +8,7 @@ public class HomeController {
     @GetMapping("/")
     public String index()
     {
-        return "home/create-raffle";
+        return "home/index";
     }
 
     @GetMapping("/event")
