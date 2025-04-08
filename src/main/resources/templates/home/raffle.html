@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/css/stylesheet.css">
   <link rel="stylesheet" href="/css/raffle.css">
   <link rel="stylesheet" href="/css/modal-raffle.css">
+
 </head>
 <body>
 <div class="page-wrapper">
@@ -206,9 +207,13 @@
   </div>
 </div>
 
+
+<div id="footer-placeholder">
+  <script>
+    fetch("footer.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+  </script>
 </div>
-<footer class="footer">
-  <p>&copy; 2025 Danmark mod Madspild. Alle rettigheder forbeholdes.</p>
-</footer>
 </body>
 </html>
