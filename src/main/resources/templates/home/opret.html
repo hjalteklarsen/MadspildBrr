@@ -100,7 +100,12 @@
     </form>
 </div>
 
-<div id="footer-placeholder"></div>
+<div id="footer-placeholder">
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+    </script>
 
 <script>
     fetch("footer.html")
@@ -161,5 +166,6 @@
         });
     };
 </script>
+
 </body>
 </html>
