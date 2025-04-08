@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Opret Event</title>
+  <link rel="stylesheet" href="/css/stylesheet.css">
+  <link rel="stylesheet" href="/css/modal-raffle.css">
+  <style>
+    .event-form {
+      max-width: 600px;
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .event-form input,
+    .event-form textarea {
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .event-form button {
+      background-color: black;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .event-form button:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<h1 style="text-align: center;">Opret et nyt Event</h1>
+
+<form class="event-form">
+  <label for="description">Beskrivelse</label>
+  <textarea id="description" name="description" rows="4" required></textarea>
+
+  <label for="duration">Varighed (minutter)</label>
+  <input type="number" id="duration" name="duration" required>
+
+  <label for="datetime">Dato og tid</label>
+  <input type="datetime-local" id="datetime" name="datetime" required>
+
+  <label for="location">Lokation</label>
+  <input type="text" id="location" name="location" required>
+
+  <label for="lecturer">Oplægsholder</label>
+  <input type="text" id="lecturer" name="lecturer" required>
+
+  <label for="price">Pris (DKK)</label>
+  <input type="number" id="price" name="price" required>
+
+  <label for="min">Minimum deltagere</label>
+  <input type="number" id="min" name="min" required>
+
+  <label for="image">Upload billede (valgfrit)</label>
+  <input type="file" id="image" name="image" accept="image/*">
+
+  <button type="submit">Opret Event</button>
+</form>
+
+<div id="event-confirmation-modal" class="modal">
+  <a href="#" class="modal-close">&times;</a>
+  <div class="modal-container">
+    <div class="modal-img-wrapper">
+      <img id="event-img-preview" class="modal-img" src="" alt="Event billede">
+    </div>
+    <div class="card-overlay">
+      <div class="restaurant-name">Event oprettet!</div>
+      <div class="tagline" id="preview-description">Beskrivelse</div>
+      <div class="badge" id="preview-datetime">Tid</div>
+      <div class="badge" id="preview-duration">Varighed</div>
+      <div class="badge" id="preview-location">Lokation</div>
+      <div class="badge" id="preview-lecturer">Oplægsholder</div>
+      <div class="badge" id="preview-price">Pris</div>
+      <div class="badge" id="preview-min">Min. deltagere</div>
+      <div style="margin-top: 10px; font-size: 18px;">🎉 Dit event er klar!</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const form = document.querySelector('.event-form');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const description = form.description.value;
+    const duration = form.duration.value;
+    const datetime = new Date(form.datetime.value).toLocaleString();
+    const location = form.location.value;
+    const lecturer = form.lecturer.value;
+    const price = form.price.value;
+    const min = form.min.value;
+    const file = form.image.files[0];
+
+    document.getElementById('preview-description').textContent = description;
+    document.getElementById('preview-datetime').textContent = `Tid: ${datetime}`;
+    document.getElementById('preview-duration').textContent = `Varighed: ${duration} min`;
+    document.getElementById('preview-location').textContent = `Sted: ${location}`;
+    document.getElementById('preview-lecturer').textContent = `Oplægsholder: ${lecturer}`;
+    document.getElementById('preview-price').textContent = `Pris: ${price} DKK`;
+    document.getElementById('preview-min').textContent = `Min. deltagere: ${min}`;
+
+    const img = document.getElementById('event-img-preview');
+    if (file) {
+      img.src = URL.createObjectURL(file);
+      img.onload = () => URL.revokeObjectURL(img.src);
+    } else {
+      img.src = "";
+    }
+
+    window.location.hash = "event-confirmation-modal";
+
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
