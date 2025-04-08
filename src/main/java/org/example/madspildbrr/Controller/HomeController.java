@@ -45,4 +45,7 @@ public class HomeController {
     public String tips(){
         return "home/tips";
     }
+
+    @GetMapping("/create-raffle")
+    public String createRaffle(){ return "home/create-raffle"; }
 }
