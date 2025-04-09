@@ -86,6 +86,7 @@
   </script>
 </div>
 <script>
+  //Hjælpe-variabel (for at hente .raffle-form klassen i HTML)
   const form = document.querySelector('.raffle-form');
 
   form.addEventListener('submit', function(e) {
@@ -101,7 +102,6 @@
     document.getElementById('confirmation-description').textContent = description;
     document.getElementById('confirmation-time').textContent = time;
     document.getElementById('confirmation-pax').textContent = `PAX: ${pax}`;
-    document.getElementById('confirmation-filename').textContent = file ? `Billede: ${file.name}` : "Intet billede valgt";
 
     const img = document.getElementById('confirmation-img');
     if (file) {
