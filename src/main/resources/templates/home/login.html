@@ -59,13 +59,13 @@
 
         if (username === "erhverv" && password === "erhverv") {
             localStorage.setItem("userType", "erhverv");
-            window.location.href = "/event";
+            window.location.href = "/";
         } else if (username === "privat" && password === "privat") {
             localStorage.setItem("userType", "privat");
-            window.location.href = "/raffle";
+            window.location.href = "/";
         } else if (username === "restaurant" && password === "restaurant") {
             localStorage.setItem("userType", "restaurant");
-            window.location.href = "/event";
+            window.location.href = "/";
         } else {
             alert("Forkert brugernavn eller adgangskode");
         }
