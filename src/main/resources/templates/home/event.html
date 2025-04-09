@@ -57,7 +57,7 @@
         <a href="#" class="modal-close">&times;</a>
         <div class="modal-container">
             <h3>Tilmeld dig eventet</h3>
-            <form action="/submit" method="POST">
+            <form id="modalform" action="/submit" method="POST">
                 <label for="name">Navn:</label><br>
                 <input type="text" id="name" name="name" required><br><br>
 
@@ -81,15 +81,16 @@
     </script>
 </div>
 <script>
+    //"submit" = listener
+    //e (eller event) er event objektet, som indeholder detaljer om form submission
+    //e.preventDefault(); holder siden fra at genlæse efter man har trykket submit.
     document.querySelector(".modal form").addEventListener("submit", function (e) {
-        e.preventDefault(); // prevent actual form submission
+        e.preventDefault();
 
         const modalContainer = document.querySelector(".modal-container");
 
-        // Replace form content with thank-you message
         modalContainer.innerHTML = "<p style='text-align: center; font-weight: bold;'>Tak for tilmeldingen!<br>Bekræftelse sendt på e-mail.</p>";
 
-        // Wait 2 seconds and then close the modal
         setTimeout(() => {
             window.location.hash = ""; // This removes #modal from URL
         }, 2000);
