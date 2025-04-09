@@ -11,21 +11,15 @@
 <body>
 <div id="navbar-placeholder">
     <script>
-            fetch("navbarstandard.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("navbar-placeholder").innerHTML = data;
-
-                let currentPage = window.location.pathname.split("/").pop();
-                let links = document.querySelectorAll(".nav-link")
-
-                links.forEach(link =>{
-                    if(link.getAttribute("href") === currentPage){
-                        link.classList.add("active")
-                    }
-                });
-            });
-
+        // Henter indholdet af navbarstandard.html af objektypen "promise"
+        // Når svaret kommer, konverteres promise til tekst (STRING)
+        // Når teksten er klar, indsættes HTML’en i placeholderen
+        // Indsætter navbaren i elementet med id="navbar-placeholder"
+        // Data er response.text, som er vores navbar
+        // Document er et built in object, som repræsenterer helheden af html siden
+        fetch("navbarstandard.html").then(response => response.text()).then(data => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+        });
     </script>
 </div>
 
@@ -57,20 +51,21 @@
     </script>
 </div>
 <script>
+
     document.querySelector("form").addEventListener("submit", function(event) {
         event.preventDefault();
-        const username = document.getElementById("username").value.trim().toLowerCase();
-        const password = document.getElementById("password").value.trim().toLowerCase();
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
 
         if (username === "erhverv" && password === "erhverv") {
             localStorage.setItem("userType", "erhverv");
-            window.location.href = "/event";
+            window.location.href = "/";
         } else if (username === "privat" && password === "privat") {
             localStorage.setItem("userType", "privat");
-            window.location.href = "/raffle";
+            window.location.href = "/";
         } else if (username === "restaurant" && password === "restaurant") {
             localStorage.setItem("userType", "restaurant");
-            window.location.href = "/event";
+            window.location.href = "/";
         } else {
             alert("Forkert brugernavn eller adgangskode");
         }
