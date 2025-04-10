@@ -17,7 +17,9 @@
         // Indsætter navbaren i elementet med id="navbar-placeholder"
         // Data er response.text, som er vores navbar
         // Document er et built in object, som repræsenterer helheden af html siden
-        fetch("navbarstandard.html").then(response => response.text()).then(data => {
+        fetch("navbarstandard.html")
+            .then(response => response.text())
+            .then(data => {
             document.getElementById("navbar-placeholder").innerHTML = data;
         });
     </script>
