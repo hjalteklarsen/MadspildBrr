@@ -52,21 +52,38 @@
 </div>
 <script>
 
+    // Finder <form>-elementet og tilføjer en event listener, der lytter efter "submit"
     document.querySelector("form").addEventListener("submit", function(event) {
+
+        // Forhindrer siden i at reloade, når formularen sendes
         event.preventDefault();
+
+        // Henter værdien fra inputfeltet med id="username", fjerner mellemrum i starten og slutningen
         const username = document.getElementById("username").value.trim();
+
+        // Henter værdien fra inputfeltet med id="password", fjerner mellemrum i starten og slutningen
         const password = document.getElementById("password").value.trim();
 
+        // Hvis både brugernavn og adgangskode er "erhverv"
         if (username === "erhverv" && password === "erhverv") {
+            // Gemmer brugertypen i localStorage
             localStorage.setItem("userType", "erhverv");
+            // Sender brugeren videre til forsiden
             window.location.href = "/";
-        } else if (username === "privat" && password === "privat") {
+        }
+        // Hvis både brugernavn og adgangskode er "privat"
+        else if (username === "privat" && password === "privat") {
             localStorage.setItem("userType", "privat");
             window.location.href = "/";
-        } else if (username === "restaurant" && password === "restaurant") {
+        }
+        // Hvis både brugernavn og adgangskode er "restaurant"
+        else if (username === "restaurant" && password === "restaurant") {
             localStorage.setItem("userType", "restaurant");
             window.location.href = "/";
-        } else {
+        }
+        // Hvis ingen af betingelserne passer
+        else {
+            // Viser en fejlbesked
             alert("Forkert brugernavn eller adgangskode");
         }
     });
